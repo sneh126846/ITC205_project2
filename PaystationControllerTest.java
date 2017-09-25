@@ -46,8 +46,7 @@ public class PaystationControllerTest {
         String barcode = "S1111";
         PaystationController instance = null;
         instance.ticketInserted(barcode);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -58,8 +57,7 @@ public class PaystationControllerTest {
         System.out.println("ticketPaid");
         PaystationController instance = null;
         instance.ticketPaid();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -70,8 +68,7 @@ public class PaystationControllerTest {
         System.out.println("ticketTaken");
         PaystationController instance = null;
         instance.ticketTaken();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }
