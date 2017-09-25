@@ -43,12 +43,11 @@ public class EntryControllerTest {
     @Test
     public void testCarEventDetected() {
         System.out.println("carEventDetected");
-        String detectorId = "";
+        String detectorId = "S2222";
         boolean carDetected = false;
         EntryController instance = null;
         instance.carEventDetected(detectorId, carDetected);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -59,8 +58,7 @@ public class EntryControllerTest {
         System.out.println("buttonPushed");
         EntryController instance = null;
         instance.buttonPushed();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -72,8 +70,7 @@ public class EntryControllerTest {
         String barcode = "";
         EntryController instance = null;
         instance.ticketInserted(barcode);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
     /**
@@ -84,8 +81,7 @@ public class EntryControllerTest {
         System.out.println("ticketTaken");
         EntryController instance = null;
         instance.ticketTaken();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -96,8 +92,7 @@ public class EntryControllerTest {
         System.out.println("notifyCarparkEvent");
         EntryController instance = null;
         instance.notifyCarparkEvent();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }
