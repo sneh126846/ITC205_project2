@@ -1,10 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entrypass;
 
+import bcccp.carpark.Carpark;
+import bcccp.carpark.ICarSensor;
+import bcccp.carpark.ICarSensorResponder;
+import bcccp.carpark.ICarpark;
+import bcccp.carpark.ICarparkObserver;
+import bcccp.carpark.IGate;
+import bcccp.tickets.adhoc.IAdhocTicket;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -23,10 +25,17 @@ public class EntryControllerTest {
     
     @BeforeClass
     public static void setUpClass() {
+        ICarSensor ui;
+        ICarSensor os;
+        ICarSensor is;
+        adhocTicketDAO = new AdhocTicketDAO(new AdhocTicketFactory());
+        seasonTickteDAO = new seasonTicketDAO(new TicketusagerecordFactory());
     }
     
     @AfterClass
     public static void tearDownClass() {
+        adhocTicketDAO = null;
+        seasonTicketDAO = null;
     }
     
     @Before
@@ -35,6 +44,8 @@ public class EntryControllerTest {
     
     @After
     public void tearDown() {
+        adhocTicketDAO = null;
+        seasonTicketDAO = null;
     }
 
     /**
@@ -43,11 +54,11 @@ public class EntryControllerTest {
     @Test
     public void testCarEventDetected() {
         System.out.println("carEventDetected");
-        String detectorId = "S2222";
-        boolean carDetected = false;
+        String detectorId = "S1111";
+        boolean carDetected = true;
         EntryController instance = null;
         instance.carEventDetected(detectorId, carDetected);
-       
+        assertEquals(expected,actual);
     }
 
     /**
@@ -58,7 +69,7 @@ public class EntryControllerTest {
         System.out.println("buttonPushed");
         EntryController instance = null;
         instance.buttonPushed();
-        
+        assertTrue("s1111");
     }
 
     /**
@@ -67,10 +78,10 @@ public class EntryControllerTest {
     @Test
     public void testTicketInserted() {
         System.out.println("ticketInserted");
-        String barcode = "";
+        String barcode = "RF34112";
         EntryController instance = null;
         instance.ticketInserted(barcode);
-      
+        assertTrue(TicketInUse):
     }
 
     /**
@@ -81,7 +92,7 @@ public class EntryControllerTest {
         System.out.println("ticketTaken");
         EntryController instance = null;
         instance.ticketTaken();
-        
+        assertFalse(TicketIsValid);
     }
 
     /**
@@ -92,7 +103,7 @@ public class EntryControllerTest {
         System.out.println("notifyCarparkEvent");
         EntryController instance = null;
         instance.notifyCarparkEvent();
-        
+        assertTrue(CarHasExited());
     }
     
 }
