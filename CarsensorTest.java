@@ -45,8 +45,7 @@ public class CarsensorTest {
         System.out.println("main");
         String[] args = null;
         Carsensor.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
