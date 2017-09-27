@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javafxapplication27;
+package carpaystation;
 
+import bcccp.carpark.ICarpark;
+import bcccp.tickets.adhoc.IAdhocTicket;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,23 +20,23 @@ import static org.junit.Assert.*;
  */
 public class PaystationControllerTest {
     
-    public PaystationControllerTest() {
+    public PaystationControllerTest(ICarpark carpark, IPaystationUI ui) {
+
+
+        this.carpark_ = carpark;
+	this.ui_ = ui;
+        ui.registerController(this);		
+	setState(PaystationController.STATE.IDLE);
     }
     
-    @BeforeClass
-    public static void setUpClass() {
+    @BeforeClass{
+    public static void setUpClass(){
+        adh = new AdhocTicket():
     }
     
     @AfterClass
     public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+      adh = null;  
     }
 
     /**
@@ -46,7 +48,7 @@ public class PaystationControllerTest {
         String barcode = "S1111";
         PaystationController instance = null;
         instance.ticketInserted(barcode);
-        
+        assertEquals(actual,expected);
     }
 
     /**
@@ -57,7 +59,7 @@ public class PaystationControllerTest {
         System.out.println("ticketPaid");
         PaystationController instance = null;
         instance.ticketPaid();
-        
+        assertTrue(amountispaid);
     }
 
     /**
@@ -68,7 +70,8 @@ public class PaystationControllerTest {
         System.out.println("ticketTaken");
         PaystationController instance = null;
         instance.ticketTaken();
-        
+        assertTrue(carexited);
     }
     
 }
+
